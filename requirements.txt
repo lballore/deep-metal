@@ -1,5 +1,6 @@
-jupyter-notebook==6.0.*
-langdetect==1.13.*
+gpt-2-simple==0.7.*
+jupyterlab==2.2.*
+langdetect==1.0.8
 matplotlib==2.2.4
 metalparser==0.6.9b1
 nltk==3.4.*
@@ -8,4 +9,6 @@ pandas==0.25.1
 pycountry==19.8.*
 py-readability-metrics==1.4.3
 scipy==1.2.1
+tensorflow==1.15.0
+tensorflow-gpu==1.15.0
 tqdm==4.41.*
