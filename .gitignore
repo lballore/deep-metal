@@ -1,5 +1,7 @@
 datasets/
-model/
+models/
+notebooks/samples/
+__MACOSX/
 __pycache__
 
 .DS_Store
