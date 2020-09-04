@@ -10,5 +10,5 @@ pycountry==19.8.*
 py-readability-metrics==1.4.3
 scipy==1.2.1
 tensorflow==1.15.0
-tensorflow-gpu==1.15.0
+tensorflow-gpu==1.15.2
 tqdm==4.41.*
