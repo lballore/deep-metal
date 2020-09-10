@@ -1,5 +1,6 @@
 gpt-2-simple==0.7.*
 jupyterlab==2.2.*
+keras==2.2.5
 langdetect==1.0.8
 matplotlib==2.2.4
 metalparser==0.6.9b1
@@ -10,5 +11,5 @@ pycountry==19.8.*
 py-readability-metrics==1.4.3
 scipy==1.2.1
 tensorflow==1.15.2
-tensorflow-gpu==1.15.2
+#tensorflow-gpu==1.15.2
 tqdm==4.41.*
