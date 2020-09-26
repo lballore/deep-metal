@@ -10,6 +10,6 @@ pandas==0.25.1
 pycountry==19.8.*
 py-readability-metrics==1.4.3
 scipy==1.2.1
-tensorflow==1.15.2
+tensorflow==1.15.4
 #tensorflow-gpu==1.15.2
 tqdm==4.41.*
