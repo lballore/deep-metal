@@ -1,5 +1,4 @@
 datasets/
-models/
 notebooks/samples/
 __MACOSX/
 __pycache__
@@ -8,4 +7,8 @@ __pycache__
 .ipynb_checkpoints
 .pyc
 .vscode
+
+datasets/
+models/deepmetal/
+models/src/runs/
 

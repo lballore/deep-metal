@@ -1,0 +1,4 @@
+[core]
+    remote = deep-metal-storage
+['remote "deep-metal-storage"']
+    url = gs://deep-metal-data/dvc-storage
