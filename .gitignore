@@ -1,5 +1,3 @@
-datasets/
-notebooks/samples/
 __MACOSX/
 __pycache__
 
@@ -10,6 +8,4 @@ __pycache__
 
 datasets/
 models/deepmetal/
-models/src/runs/
-
-/datasets
+models/src/runs*/
