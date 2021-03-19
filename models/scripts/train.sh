@@ -13,16 +13,16 @@ VALIDATION_FILE=$SCRIPT_DIR/../../datasets/deepmetal_val.txt
 python run_language_modeling.py \
     --output_dir=$OUTPUT_DIR \
     --model_type=gpt2 \
-    --model_name_or_path=gpt2-medium \
+    --model_name_or_path=gpt2 \
     --do_train \
     --train_data_file=$TRAIN_FILE \
     --do_eval \
     --eval_data_file=$VALIDATION_FILE \
-    --per_device_train_batch_size=1 \
-    --per_device_eval_batch_size=1 \
+    --per_device_train_batch_size=3 \
+    --per_device_eval_batch_size=3 \
     --evaluate_during_training \
     --learning_rate=1e-5 \
-    --num_train_epochs=15 \
+    --num_train_epochs=10 \
     --logging_steps=3000 \
     --save_steps=3000 \
     --gradient_accumulation_steps=5 \
