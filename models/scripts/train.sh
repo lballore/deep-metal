@@ -6,14 +6,14 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 cd $SCRIPT_DIR/../src
 
-OUTPUT_DIR=$SCRIPT_DIR/../deepmetal
+OUTPUT_DIR=$SCRIPT_DIR/../deepmetal-medium
 TRAIN_FILE=$SCRIPT_DIR/../../datasets/deepmetal_train.txt
 VALIDATION_FILE=$SCRIPT_DIR/../../datasets/deepmetal_val.txt
 
 python run_language_modeling.py \
     --output_dir=$OUTPUT_DIR \
     --model_type=gpt2 \
-    --model_name_or_path=gpt2 \
+    --model_name_or_path=gpt2-medium \
     --do_train \
     --train_data_file=$TRAIN_FILE \
     --do_eval \
