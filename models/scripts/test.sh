@@ -15,5 +15,5 @@ python run_language_modeling.py \
     --model_name_or_path=$OUTPUT_DIR \
     --do_eval \
     --eval_data_file=$TEST_FILE \
-    --per_device_eval_batch_size=1 \
+    --per_device_eval_batch_size=3 \
     --gradient_accumulation_steps=5
