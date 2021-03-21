@@ -9,3 +9,4 @@ __pycache__
 datasets/
 models/deepmetal/
 models/src/runs*/
+/datasets
