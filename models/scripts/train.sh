@@ -6,7 +6,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 cd $SCRIPT_DIR/../src
 
-OUTPUT_DIR=$SCRIPT_DIR/../deepmetal-medium
+OUTPUT_DIR=$SCRIPT_DIR/../deepmetal
 TRAIN_FILE=$SCRIPT_DIR/../../datasets/deepmetal_train.txt
 VALIDATION_FILE=$SCRIPT_DIR/../../datasets/deepmetal_val.txt
 
