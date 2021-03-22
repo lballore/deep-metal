@@ -22,7 +22,7 @@ python run_language_modeling.py \
     --per_device_eval_batch_size=3 \
     --evaluate_during_training \
     --learning_rate=1e-5 \
-    --num_train_epochs=10 \
+    --num_train_epochs=20 \
     --logging_steps=3000 \
     --save_steps=3000 \
     --gradient_accumulation_steps=5 \
