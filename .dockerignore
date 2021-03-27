@@ -1,2 +1,4 @@
 .dvc/
 **/checkpoint-*
+
+*.dvc
