@@ -25,5 +25,5 @@ python run_language_modeling.py \
     --num_train_epochs=20 \
     --logging_steps=3000 \
     --save_steps=3000 \
-    --gradient_accumulation_steps=5 \
+    --gradient_accumulation_steps=3 \
     #--overwrite_output_dir  # uncomment if you want to continue training from last checkpoint
