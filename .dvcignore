@@ -2,6 +2,6 @@
 # the performance. Learn more at
 # https://dvc.org/doc/user-guide/dvcignore
 
-models/deepmetal/checkpoint-*
+model/deepmetal/checkpoint-*
 datasets/cached_lm*
 

@@ -4,7 +4,7 @@ set -euxo pipefail
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-cd $SCRIPT_DIR/../src
+cd $SCRIPT_DIR/../finetuning
 
 OUTPUT_DIR=$SCRIPT_DIR/../deepmetal
 
@@ -17,4 +17,4 @@ python run_generation.py \
     --seed=$(echo $RANDOM) \
     --num_return_sequences=1 \
     --p=0.97 \
-    --temperature=0.80 \
+    --temperature=0.85 \

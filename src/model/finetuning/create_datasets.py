@@ -5,7 +5,7 @@ import os
 
 from tqdm import tqdm
 
-DATASETS_PATH = f"{os.path.dirname(os.path.realpath(__file__))}/../../datasets"
+DATASETS_PATH = f"{os.path.dirname(os.path.realpath(__file__))}/../../../datasets"
 TRAIN_RATIO = 0.7
 EVAL_RATIO = 0.2
 TEST_RATIO = 0.1

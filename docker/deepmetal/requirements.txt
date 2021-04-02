@@ -1,5 +1,7 @@
+jupyterlab==2.2.*
 pandas==1.1.2
-torch==1.6.*
+torch==1.8.*
 scikit-learn==0.23.*
-transformers==3.3.0
-tensorboard==2.3.0
+transformers==4.4.*
+tensorboard==2.4.*
+tensorflow==2.4.*
