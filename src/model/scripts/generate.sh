@@ -17,4 +17,4 @@ python run_generation.py \
     --seed=$(echo $RANDOM) \
     --num_return_sequences=1 \
     --p=0.97 \
-    --temperature=0.80 \
+    --temperature=0.85 \
