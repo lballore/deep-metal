@@ -1,6 +1,6 @@
 import os
 
-from transformers import GPT2Config, TFGPT2LMHeadModel
+from transformers import GPT2Config, GPT2Tokenizer, TFGPT2LMHeadModel
 
 MODEL_PATH = f"{os.path.dirname(os.path.realpath(__file__))}/../deepmetal"
 
