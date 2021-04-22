@@ -1,6 +1,7 @@
 BASE_DIR := $(CURDIR)
 DOCKER_IMAGE_ANALYSIS := deep-metal-analysis
 DOCKER_IMAGE_MODEL := deep-metal-model
+DOCKER_IMAGE_DEMO := deep-metal-demo
 GROUP_ID := 1000
 USER_ID := 1000
 
@@ -42,3 +43,16 @@ generator-run-notebook:
 		-v $(CURDIR)/datasets:/home/deepmetal/datasets:rw \
 		-v $(CURDIR)/resources:/home/deepmetal/resources:rw \
 		$(DOCKER_IMAGE_MODEL)
+
+
+.PHONY: demo-build
+demo-build:
+	docker build --rm -f docker/demo/Dockerfile \
+		-t $(DOCKER_IMAGE_DEMO) .
+
+
+.PHONY: demo-run
+demo-run:
+	docker run --rm -it -p 80:8080 \
+		-v $(CURDIR)/src/demo:/home/streamlitapp/deep-metal:rw \
+		$(DOCKER_IMAGE_DEMO)
