@@ -12,8 +12,9 @@ analysis-build:
 
 .PHONY: analysis-run
 analysis-run:
-	docker run --rm -it -p 8080:8080 \
-		-v notebooks/analysis:/home/analysis/notebooks \
+	docker run --rm -it --shm-size=1024m -p 8080:8080 \
+		-v $(CURDIR)/notebooks/analysis:/home/analysis/notebooks \
+		-v $(CURDIR)/datasets:/home/analysis/datasets \
 		$(DOCKER_IMAGE_ANALYSIS)
 
 
