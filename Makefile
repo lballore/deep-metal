@@ -13,8 +13,9 @@ analysis-build:
 
 .PHONY: analysis-run
 analysis-run:
-	docker run --rm -it -p 8080:8080 \
-		-v notebooks/analysis:/home/analysis/notebooks \
+	docker run --rm -it --shm-size=1024m -p 8080:8080 \
+		-v $(CURDIR)/notebooks/analysis:/home/analysis/notebooks \
+		-v $(CURDIR)/datasets:/home/analysis/datasets \
 		$(DOCKER_IMAGE_ANALYSIS)
 
 
@@ -49,10 +50,3 @@ generator-run-notebook:
 demo-build:
 	docker build --rm -f docker/demo/Dockerfile \
 		-t $(DOCKER_IMAGE_DEMO) .
-
-
-.PHONY: demo-run
-demo-run:
-	docker run --rm -it -p 80:8080 \
-		-v $(CURDIR)/src/demo:/home/streamlitapp/deep-metal:rw \
-		$(DOCKER_IMAGE_DEMO)
