@@ -13,4 +13,4 @@ RUN python -m pip install --user -r /tmp/requirements.txt
 
 WORKDIR /home/analysis
 
-CMD [ "jupyter-notebook", "./notebooks", "--ip=0.0.0.0", "--port=8080" ]
+CMD [ "jupyter-notebook", ".", "--ip=0.0.0.0", "--port=8080" ]
