@@ -48,5 +48,31 @@ generator-run-notebook:
 
 .PHONY: demo-build
 demo-build:
-	docker build --rm -f docker/demo/Dockerfile \
+	docker build --no-cache --rm -f docker/demo/Dockerfile \
+		--target backend-main \
 		-t $(DOCKER_IMAGE_DEMO) .
+
+
+.PHONY: demo-run
+demo-run:
+	docker run --rm -it -p 80:8080 \
+		--env TOKENIZERS_PARALLELISM=true \
+		$(DOCKER_IMAGE_DEMO)
+
+
+.PHONY: demo-bash
+demo-bash:
+	docker run --rm -it -p 80:8080 \
+		$(DOCKER_IMAGE_DEMO) /bin/bash
+
+
+.PHONY: frontend-build
+frontend-build:
+	docker build --no-cache --rm -f docker/demo/Dockerfile \
+		--target frontend-builder \
+		-t deep-metal-frontend .
+
+.PHONY: frontend-bash
+frontend-bash:
+	docker run --rm -it -p 80:5000 \
+		deep-metal-frontend /bin/sh

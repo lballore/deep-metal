@@ -1,0 +1,8 @@
+aiofiles==0.6.0
+fastapi
+gunicorn
+httptools
+torch==1.8.*
+transformers==4.5.*
+uvicorn
+uvloop
