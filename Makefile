@@ -48,7 +48,8 @@ generator-run-notebook:
 
 .PHONY: demo-build
 demo-build:
-	docker build --no-cache --rm -f docker/demo/Dockerfile \
+	docker build --rm -f docker/demo/Dockerfile \
+		--build-arg WORKING_ENV=dev \
 		--target backend-main \
 		-t $(DOCKER_IMAGE_DEMO) .
 

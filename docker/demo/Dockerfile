@@ -14,6 +14,8 @@ RUN npm run build
 # Main image with backend
 FROM python:3.8-slim AS backend-main
 
+ARG WORKING_ENV=pro
+
 USER root
 
 RUN useradd -m -u 1000 -d /home/app app
@@ -25,8 +27,9 @@ RUN pip install -r /tmp/requirements.txt
 USER app
 
 ENV STATIC_FILES_ROOT=/home/app/src/frontend/public
+ENV ENVIRONMENT=${WORKING_ENV}
 
-COPY --from=frontend-builder /home/app/frontend/public $STATIC_FILES_ROOT
+COPY --from=frontend-builder /home/app/frontend/public ${STATIC_FILES_ROOT}
 COPY src/demo/backend /home/app/src/backend
 
 WORKDIR /home/app/src

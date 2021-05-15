@@ -5,6 +5,7 @@ import sys
 from gunicorn.app.base import BaseApplication
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -13,7 +14,7 @@ from config import Settings
 
 
 class Application(BaseApplication):
-    def __init__(self, app, options={}):
+    def __init__(self, app: FastAPI, options: dict = {}):
         self.options = options
         if "worker_class" not in self.options:
             self.options["worker_class"] = "uvicorn.workers.UvicornWorker"
@@ -22,7 +23,7 @@ class Application(BaseApplication):
         self.application = app
         super().__init__()
 
-    def load_config(self):
+    def load_config(self) -> None:
         config = {
             key: value
             for key, value in self.options.items()
@@ -31,28 +32,38 @@ class Application(BaseApplication):
         for key, value in config.items():
             self.cfg.set(key.lower(), value)
 
-    def load(self):
+    def load(self) -> FastAPI:
         return self.application
 
 
-def run_application(app, options={}):
+def run_application(app: FastAPI, options: dict = {}) -> None:
     Application(app, options).run()
 
 
-def make_app(settings):
+def make_app(settings: Settings) -> FastAPI:
     app = FastAPI(
         title = "DeepMetal API",
         description = "AI-powered heavy metal lyrics generator.",
-        version = "0.0.1"
+        version = "0.0.1",
+        docs_url = None if settings.ENVIRONMENT == "pro" else "/docs",
+        redoc_url = None
     )
     logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
     api_router = make_api_router(settings)
     app.include_router(api_router, prefix=f"/api/{API_VERSION}")
 
-    @app.get("/healthcheck")
-    def healthcheck():
-        return "OK"
+    origins = [
+        "http://0.0.0.0",
+        "http://0.0.0.0:8080",
+    ]
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=origins,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
     app.mount(
         "/static",
@@ -60,8 +71,12 @@ def make_app(settings):
         name="static",
     )
 
-    @app.get("/{_path:path}", include_in_schema=False)
-    def root(_path: str):
+    @app.get("/healthcheck")
+    def healthcheck() -> str:
+        return "OK"
+
+    @app.get("/", include_in_schema=False)
+    def root() -> FileResponse:
         return FileResponse(os.path.join(settings.STATIC_FILES_ROOT, "index.html"))
 
     return app
