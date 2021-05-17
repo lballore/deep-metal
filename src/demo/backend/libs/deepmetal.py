@@ -1,5 +1,5 @@
 import random
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 from transformers import pipeline, set_seed
 from transformers.pipelines.base import Pipeline
@@ -11,12 +11,12 @@ GENERATOR_MODEL = pipeline('text-generation', model='lucone83/deep-metal', devic
 
 def generate_lyrics(
     generator: Pipeline,
-    text_inputs : str = "",
-    max_length : int = 256,
-    min_length : int = 128,
-    top_p : float = 0.95,
-    top_k : int = 50,
-    temperature : float = 0.90
+    text_inputs: Optional[str],
+    max_length: int,
+    min_length: int,
+    top_p: float,
+    top_k: int,
+    temperature: float
 ) -> List[Dict[str, str]]:
 
     set_seed(_generate_seed())

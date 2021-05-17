@@ -1,6 +1,16 @@
 <script>
+  export let textInputs;
+  export let metalLyrics = [];
   export let demoData = {};
   const { HEADING, ALL_SERVICES } = demoData;
+
+  async function generateLyrics() {
+    const response = await fetch(`/api/v1/generate`, {
+      method: "POST",
+    });
+    const data = await response.json();
+    console.log(data)
+  }
 </script>
 
 <!------------------------------------------->
@@ -10,7 +20,7 @@
   <div class="container text-center">
     <h2 class="title">{HEADING}</h2>
     <div class="row section-body">
-
+      <button class="btn btn-outline-primary" type="button" on:click={generateLyrics}>Get lyrics</button>
     </div>
     <buttom class="btn btn-primary round-border main-bgcolor">
       {ALL_SERVICES}

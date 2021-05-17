@@ -1,7 +1,8 @@
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 from fastapi import APIRouter, HTTPException, Header
 
+from datatypes import GenerateLyricsRequest, GenerateLyricsResponse
 from libs.deepmetal import GENERATOR_MODEL, generate_lyrics
 
 API_VERSION = "v1"
@@ -11,29 +12,26 @@ def make_api_router(settings):
 
 
     @app.get("/test")
-    def test():
+    def test() -> str:
         return "Test"
 
 
-    @app.post("/generate")
+    @app.post("/generate", response_model=GenerateLyricsResponse)
     def generate(
-        text_inputs : str = "",
-        max_length : int = 256,
-        min_length: int = 128,
-        top_p : float = 0.95,
-        top_k: int = 50,
-        temperature : float = 0.90
-     ) -> List[Dict[str, str]]:
+        generate_request: GenerateLyricsRequest,
+    ) -> GenerateLyricsResponse:
 
-        return generate_lyrics(
+        lyrics = generate_lyrics(
             generator=GENERATOR_MODEL,
-            text_inputs=text_inputs,
-            max_length=max_length,
-            min_length=min_length,
-            top_p=top_p,
-            top_k=top_k,
-            temperature=temperature
+            text_inputs=generate_request.text_inputs,
+            max_length=generate_request.max_length,
+            min_length=generate_request.min_length,
+            top_p=generate_request.top_p,
+            top_k=generate_request.top_k,
+            temperature=generate_request.temperature
         )
-
+        return GenerateLyricsResponse(
+            lyrics=lyrics
+        )
 
     return app
