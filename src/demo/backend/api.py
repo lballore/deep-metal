@@ -24,10 +24,6 @@ def make_api_router(settings):
         lyrics = generate_lyrics(
             generator=GENERATOR_MODEL,
             text_inputs=generate_request.text_inputs,
-            max_length=generate_request.max_length,
-            min_length=generate_request.min_length,
-            top_p=generate_request.top_p,
-            top_k=generate_request.top_k,
             temperature=generate_request.temperature
         )
         return GenerateLyricsResponse(

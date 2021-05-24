@@ -16,7 +16,7 @@ const BANNER_DATA = {
 
 const DEMO_DATA = {
   HEADING: "Try the demo!",
-  ALL_SERVICES: "All Services",
+  GENERATE: "Generate lyrics",
 };
 
 const ABOUT_DATA = {

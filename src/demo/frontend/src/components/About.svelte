@@ -1,24 +1,40 @@
 <script>
-  export let aboutData = {};
-  const { HEADING, TITLE, IMAGE_URL, WHY_CHOOSE_US_LIST } = aboutData;
+ const ABOUT_ME = [
+    {
+      DESCRIPTION: "Sardinian born software engineer, based in Stockholm, Sweden 🇸🇪",
+      ICON: "fa-home"
+    },
+    {
+      DESCRIPTION:"Software Engineer at EA DICE",
+      ICON: "fa-laptop-code"
+    },
+    {
+      DESCRIPTION:"Proud metalhead, football maniac and gamer",
+      ICON: "fa-bolt"
+    },
+    {
+      DESCRIPTION: "History nerd, polyglot, bassist",
+      ICON: "fa-book-reader"
+    }
+  ];
 </script>
 <!------------------------------------------->
 <!----------------MARKUP----------------------->
 <!------------------------------------------->
-<section id="about-us" class="section grey-bgcolor">
+
+<section id="testimonials" class="section">
   <div class="container">
-    <h2 class="title text-center">{HEADING}</h2>
-    <div class="row section-body">
-      <div class="col-md-6">
-        <h3 class="about-title">{TITLE}</h3>
-        <ul>
-          {#each WHY_CHOOSE_US_LIST as list}
-            <li>{list}</li>
-          {/each}
-        </ul>
+    <h1 class="title text-center deepmetal-logo mb-3">About me</h1>
+    <div class="row justify-content-md-center section-body">
+      <div class="col-md-5 my-pic text-center">
+        <img src="/static/images/my-picture.jpg" alt="luca" />
       </div>
-      <div class="col-md-6">
-        <img src={IMAGE_URL} alt="" class="img-fluid" />
+      <div class="col-md-7 my-details">
+        <h2 class="deepmetal-logo mb-3">Luca Ballore</h2>
+        <ul class="fa-ul">
+          {#each ABOUT_ME as aboutMe}
+            <li><span class="fa-li"><i class="fas {aboutMe.ICON}"></i></span>{aboutMe.DESCRIPTION}</li>
+          {/each}
       </div>
     </div>
   </div>
@@ -28,16 +44,17 @@
 <!----------------STYLE----------------------->
 <!------------------------------------------->
 <style>
-  .about-title {
-    margin-top: 8%;
-    margin-bottom: 20px;
+  .my-details ul li {
+    margin-bottom: 16px;
   }
 
-  section ul li {
-    margin: 10px 0;
+  .my-pic img {
+    width: 90%;
+    height: auto;
+    border-radius: 50%;
   }
 
-  section ul {
-    padding-left: 23px;
+  .my-details {
+    border-left: 4px solid black;
   }
 </style>

@@ -9,28 +9,8 @@ class GenerateLyricsRequest(BaseModel):
         title="Text incipit",
         description="Text incipit (leave empty for unconditioned generation)"
     )
-    max_length: Optional[int] = Field(
-        256,
-        title="Max length",
-        description="Maximum length for the generated lyrics (number of tokens)"
-    )
-    min_length: Optional[int] = Field(
-        128,
-        title="Min length",
-        description="Minimum length for the generated lyrics (number of tokens)"
-    )
-    top_k: Optional[int] = Field(
-        50,
-        title="Top-k filtering",
-        description="The number of highest probability vocabulary tokens to keep for top-k-filtering"
-    )
-    top_p: Optional[float] = Field(
-        0.95,
-        title="Top-p filtering",
-        description="The most probable tokens with probabilities that add up to top_p or higher are kept for generation"
-    )
     temperature: Optional[float] = Field(
-        0.90,
+        1.00,
         title="Temperature",
         description="The value used to module the next token probabilities"
     )

@@ -14,7 +14,7 @@
 <!----------------MARKUP----------------------->
 <!------------------------------------------->
 <section class="main-bgcolor light-color" id="footer">
-  <img src="images/wave2.png" alt="" class="wave-img" />
+  <img src="/static/images/wave2.png" alt="" class="wave-img" />
   <div class="container">
     <div class="row section-body">
       <div class="col-md-4 footer-box">
