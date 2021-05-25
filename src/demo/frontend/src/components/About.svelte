@@ -9,7 +9,7 @@
       ICON: "fa-laptop-code"
     },
     {
-      DESCRIPTION:"Proud metalhead, football maniac and gamer",
+      DESCRIPTION:"Proud metalhead, football lover and gamer",
       ICON: "fa-bolt"
     },
     {
@@ -27,9 +27,9 @@
     <h1 class="title text-center deepmetal-logo mb-3">About me</h1>
     <div class="row justify-content-md-center section-body">
       <div class="col-md-5 my-pic text-center">
-        <img src="/static/images/my-picture.jpg" alt="luca" />
+        <img class="img-fluid" src="/static/images/my-picture.jpg" alt="luca" />
       </div>
-      <div class="col-md-7 my-details">
+      <div class="col-md-7 my-details my-auto">
         <h2 class="deepmetal-logo mb-3">Luca Ballore</h2>
         <ul class="fa-ul">
           {#each ABOUT_ME as aboutMe}

@@ -40,3 +40,8 @@ h1 {
 .section-body {
   padding: 20px 0;
 }
+
+.wave-img {
+  width: 100%;
+  height: auto;
+}

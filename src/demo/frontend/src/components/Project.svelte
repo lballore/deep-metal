@@ -13,8 +13,8 @@
 
           <ul>
             <li>
-                Brief <strong>analysis of dataset contents</strong>: quantities (amount of artists, albums, album types, songs etc.) and
-                simple statistics, album releases and distribution over the years,language distribution, bands popularity etc.
+              Brief <strong>analysis of dataset contents</strong>: quantities (amount of artists, albums, album types, songs etc.) and
+              simple statistics, album releases and distribution over the years,language distribution, bands popularity etc.
             </li>
             <li>
               <strong>Readability analysis</strong>: swear words ratio and Coleman-Liau grade index, word frequence and definition of
@@ -26,7 +26,8 @@
             </li>
             <li>
               Heavy metal <strong>lyrics generator</strong>, based on
-              <a target="_blank" href="https://github.com/openai/gpt-2">OpenAI's GPT-2 generative model</a>
+              <a target="_blank" href="https://github.com/openai/gpt-2">OpenAI's GPT-2 generative model</a>. The model is also available
+              on the HuggingFace transformer library (read more <a target="_blank" href="https://huggingface.co/lucone83/deep-metal">here</a>).
             </li>
           </ul>
 

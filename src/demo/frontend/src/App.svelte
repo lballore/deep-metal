@@ -6,8 +6,6 @@
   import About from "./components/About.svelte";
   import Social from "./components/Social.svelte";
   import Footer from "./components/Footer.svelte";
-  import DATA from "./data/data";
-  console.log(DATA);
 </script>
 
 <!-- Navbar -->
@@ -18,9 +16,9 @@
 <Project />
 <!-- Demo -->
 <Demo />
-<!-- Testimonials -->
+<!-- About me -->
 <About />
 <!-- Social Media -->
-<Social socialData={DATA.SOCIAL_DATA} />
+<Social />
 <!-- Footer -->
-<Footer footerData={DATA.FOOTER_DATA} header={DATA.HEADER} />
+<Footer />
