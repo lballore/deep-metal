@@ -2,6 +2,7 @@ BASE_DIR := $(CURDIR)
 DOCKER_IMAGE_ANALYSIS := deep-metal-analysis
 DOCKER_IMAGE_MODEL := deep-metal-model
 DOCKER_IMAGE_DEMO := deep-metal-demo
+DOCKER_IMAGE_DEMO_FRONTEND := deep-metal-frontend
 GROUP_ID := 1000
 USER_ID := 1000
 
@@ -71,9 +72,9 @@ demo-bash:
 frontend-build:
 	docker build --no-cache --rm -f docker/demo/Dockerfile \
 		--target frontend-builder \
-		-t deep-metal-frontend .
+		-t $(DOCKER_IMAGE_DEMO_FRONTEND) .
 
 .PHONY: frontend-bash
 frontend-bash:
 	docker run --rm -it -p 80:5000 \
-		deep-metal-frontend /bin/sh
+		$(DOCKER_IMAGE_DEMO_FRONTEND) /bin/sh
