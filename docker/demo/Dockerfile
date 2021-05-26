@@ -10,7 +10,6 @@ ENV HOST=0.0.0.0
 RUN npm install
 RUN npm run build
 
-
 # Main image with backend
 FROM python:3.8-slim AS backend-main
 
