@@ -8,7 +8,7 @@
   <div class="container">
     <h1 class="title text-center deepmetal-logo">The project</h1>
     <div class="row section-body">
-      <div class="col-md-6 my-auto">
+      <div class="col-md-7 my-auto">
           The research is divided in <strong>4 parts</strong>:
 
           <ul>
@@ -35,8 +35,8 @@
           or visit the official <a target="_blank" href="https://github.com/lucone83/deep-metal">GitHub repository</a> of the project.
       </div>
 
-      <div class="col-md-6 mt-5 d-none d-lg-block d-xl-block d-md-block">
-        <img src=/static/images/horns.png alt="Metal horns" class="img-fluid" />
+      <div class="col-md-5 my-auto d-none d-lg-block d-xl-block d-md-block">
+        <img src=/static/images/horns3.png alt="" class="img-fluid" />
       </div>
     </div>
   </div>
