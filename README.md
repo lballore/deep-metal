@@ -1,6 +1,6 @@
 # deep-metal
 **Deep Metal**: when heavy metal meets data science. <br>
-Text analysis of heavy metal lyrics and NN-based lyrics generator (WIP).
+Text analysis of heavy metal lyrics and deep learning based lyrics generator.
 
 <img src="./resources/presentation-pic.jpg" alt="deep-metal" />
 
@@ -61,6 +61,24 @@ Once in the container, you can launch the command:
 You can edit the `generate.sh` file in order to regulate the parameters for the generation.
 
 You can use this model directly with a pipeline for text generation. Since the generation relies on some randomness, it could be good to set a seed for reproducibility:
+
+### Demo web application
+
+I built a little SPA able to demonstrate some capabilities of the model.
+It has been built using [FastAPI](https://github.com/tiangolo/fastapi) as backend framework and [Svelte](https://svelte.dev/) for the frontend part.
+
+The application is supposed to run inside a **Docker** container.
+
+#### Run in local
+
+To execute the demo app in local, just run from the root folder of the project:
+
+```bash
+make demo-build demo-run
+```
+
+The application should then be reachable at your lohalhost address.
+
 
 ## About this project
 

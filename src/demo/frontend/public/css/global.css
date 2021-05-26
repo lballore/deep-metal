@@ -1,0 +1,47 @@
+@font-face{
+  font-family: "MetalMania";
+  src: url('/static/fonts/MetalMania-Regular.ttf')
+}
+
+:root {
+  --gradient: linear-gradient(90deg, #000000 0%, #444444 100%);
+  --light: #fff;
+  --grey: #f8f9fa;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+h1 {
+  font-size: 40px;
+}
+
+.main-bgcolor {
+  background-image: var(--gradient);
+}
+.light-color {
+  color: var(--light) !important;
+}
+.grey-bgcolor {
+  background: var(--grey);
+}
+.deepmetal-logo {
+  font-family: "MetalMania";
+}
+
+.section {
+  padding: 50px 0;
+}
+
+.section-body {
+  padding: 20px 0;
+}
+
+.wave-img {
+  width: 100%;
+  height: auto;
+}

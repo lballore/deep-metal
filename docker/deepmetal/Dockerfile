@@ -4,7 +4,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -qq update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -qqy install python3 python3-pip python3-tk tmux
 RUN rm -rf /var/lib/apt/lists/
 RUN ln -s /usr/bin/python3 /usr/bin/python
-RUN ln -s /usr/bin/pip3 /usr/bin/pip
 
 COPY docker/deepmetal/requirements.txt /tmp/requirements.txt
 
