@@ -65,19 +65,7 @@ You can use this model directly with a pipeline for text generation. Since the g
 ### Demo web application
 
 I built a little SPA able to demonstrate some capabilities of the model.
-It has been built using [FastAPI](https://github.com/tiangolo/fastapi) as backend framework and [Svelte](https://svelte.dev/) for the frontend part.
-
-The application is supposed to run inside a **Docker** container.
-
-#### Run in local
-
-To execute the demo app in local, just run from the root folder of the project:
-
-```bash
-make demo-build demo-run
-```
-
-The application should then be reachable at your lohalhost address.
+You can find the related repository [here](https://github.com/lucone83/deep-metal-demo)
 
 
 ## About this project
