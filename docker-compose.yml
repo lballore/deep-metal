@@ -1,9 +1,10 @@
-version: '3'
+version: '3.4'
 services:
-  deep-metal-demo:
+  demo:
     image: deep-metal-demo
     build:
       context: .
-      dockerfile: docker/ebt/Dockerfile
+      dockerfile: docker/demo/Dockerfile
+      target: demo-main
     ports:
       - '80:8080'

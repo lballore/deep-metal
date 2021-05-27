@@ -51,7 +51,7 @@ generator-run-notebook:
 demo-build:
 	docker build --rm -f docker/demo/Dockerfile \
 		--build-arg WORKING_ENV=dev \
-		--target backend-main \
+		--target demo-main \
 		-t $(DOCKER_IMAGE_DEMO) .
 
 
