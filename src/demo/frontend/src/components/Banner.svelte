@@ -15,16 +15,10 @@
         </p>
       </div>
       <div class="col-md-6 mb-5 my-auto">
-        <img src="/static/images/home.png" alt="home" class="img-fluid" />
+        <img src="/static/images/home.png" alt="" class="img-fluid" />
       </div>
     </div>
   </div>
 
   <img src="/static/images/wave1.png" alt="" class="wave-img" />
 </section>
-
-<!------------------------------------------->
-<!----------------STYLE----------------------->
-<!------------------------------------------->
-<style>
-</style>

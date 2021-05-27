@@ -1,10 +1,10 @@
 <script>
   const NAVBAR_DATA = [
     { id: 1, url: "/", label: "Home" },
-    { id: 2, url: "#project", label: "Project" }, // about-us
-    { id: 3, url: "#demo", label: "Demo" }, // services
-    { id: 4, url: "#about-me", label: "About me" }, // testimonials
-    { id: 5, url: "#footer", label: "Contacts" } // contacts
+    { id: 2, url: "#project", label: "Project" },
+    { id: 3, url: "#demo", label: "Demo" },
+    { id: 4, url: "#about-me", label: "About me" },
+    { id: 5, url: "#social-media", label: "Contacts" }
   ];
 
   function autoToggleNavbar() {
