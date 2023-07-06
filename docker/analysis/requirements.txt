@@ -8,6 +8,6 @@ pandarallel==1.4.*
 pandas==0.25.1
 pycountry==19.8.*
 py-readability-metrics==1.4.3
-scipy==1.2.1
+scipy==1.10.0
 tqdm==4.41.*
 wordcloud==1.8.*
